@@ -2,7 +2,7 @@ import axios from "axios";
 
 // 1. Create a reusable axios instance
 export const axiosinstance = axios.create({
-  baseURL: "http://localhost:3001", // ✅ optional, set if you always hit same backend
+  baseURL: process.env.baseURL // ✅ optional, set if you always hit same backend
 });
 
 // 2. Add a request interceptor for automatic token injection
