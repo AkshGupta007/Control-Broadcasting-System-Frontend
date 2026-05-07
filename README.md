@@ -11,7 +11,11 @@ A role-based **content broadcasting system** where teachers can upload education
 # 🚀 Live Demo
 
 - 🌐 Frontend vercel: (https://control-broadcasting-system-f-git-232261-akshgupta007s-projects.vercel.app/)
-- 🔗 Backend: https://control-broadcasting-system-frontend-1.onrender.com
+- 🔗 Backend:
+-  https://control-broadcasting-system-frontend-1.onrender.com/
+-  https://control-broadcasting-system-frontend-1.onrender.com/users
+-  https://control-broadcasting-system-frontend-1.onrender.com/contents
+-   https://control-broadcasting-system-frontend-1.onrender.com/approval_logs
 
 ---
 
