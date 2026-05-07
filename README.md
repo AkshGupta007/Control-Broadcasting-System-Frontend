@@ -1,16 +1,74 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 📡 Control Broadcasting System
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+A role-based **content broadcasting system** where teachers can upload educational content and principals can approve/reject it. Includes a live content display system with role-based dashboards.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+# 🚀 Live Demo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🌐 Frontend vercel: (https://control-broadcasting-system-f-git-232261-akshgupta007s-projects.vercel.app/)
+- 🔗 Backend: https://control-broadcasting-system-frontend-1.onrender.com
+
+---
+
+# 🧠 Features
+
+## 👨‍🏫 Teacher
+- Upload content (images for now)
+- View content status (pending/approved/rejected)
+- Dashboard analytics
+
+## 🧑‍💼 Principal
+- View all content
+- Approve / Reject submissions
+- Add rejection reasons
+- Track approval logs // pending feature but will add soon
+
+## 📺 Live System
+- Only approved content is shown
+- Dynamic content rotation system
+
+---
+
+# ⚙️ Tech Stack
+
+### Frontend
+- React (Vite)
+- Redux Toolkit
+- React Router DOM
+- Axios
+- Tailwind CSS
+
+### Backend (Mock)
+- json-server
+- Node.js custom server wrapper
+- db.json database
+
+### Deployment
+- Vercel (Frontend)
+- Render (Backend)
+
+---
+
+# 📁 Project Structure
+
+```txt
+cb/
+├── Backend/
+│   ├── db.json
+│   ├── server.js
+│   ├── package.json
+│
+├── src/
+│   ├── Components/
+│   ├── Pages/
+│   ├── Services/
+│   ├── Slices/
+│   ├── Store/
+│
+├── vercel.json
+├── package.json
