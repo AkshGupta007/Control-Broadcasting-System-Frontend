@@ -14,7 +14,7 @@ A role-based **content broadcasting system** where teachers can upload education
 - 🔗 Backend:
 -  https://control-broadcasting-system-frontend-1.onrender.com/
 -  https://control-broadcasting-system-frontend-1.onrender.com/users
--  https://control-broadcasting-system-frontend-1.onrender.com/contents
+-  https://control-broadcasting-system-frontend-1.onrender.com/content
 -   https://control-broadcasting-system-frontend-1.onrender.com/approval_logs
 
 ---
