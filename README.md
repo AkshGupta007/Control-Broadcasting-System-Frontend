@@ -17,7 +17,17 @@ A role-based **content broadcasting system** where teachers can upload education
 -  https://control-broadcasting-system-frontend-1.onrender.com/content
 -   https://control-broadcasting-system-frontend-1.onrender.com/approval_logs
 
+
+# to Login As teacher
+    "email": "teacher@school.com",
+   "password": "123",
+    "role": "teacher"
 ---
+
+#  To login AS principal 
+      "email": "principal@school.com",
+      "password": "admin123",
+      "role": "principal"
 
 # 🧠 Features
 
@@ -32,9 +42,14 @@ A role-based **content broadcasting system** where teachers can upload education
 - Add rejection reasons
 - Track approval logs // pending feature but will add soon
 
-## 📺 Live System
+## 📺 Live System & Features
 - Only approved content is shown
 - Dynamic content rotation system
+- have option to toggle dark mode
+- can reload upto 1000 cards at same time
+- useMemo to prevent re-renders
+- use of Thunk everywhere
+- Structured Hireachy and Api Calss
 
 ---
 
@@ -58,6 +73,32 @@ A role-based **content broadcasting system** where teachers can upload education
 
 ---
 
+
+### ScreenShots
+
+
+![ Login Page](image.png)
+
+
+
+![Teacher DashBoard](image-1.png)
+
+
+
+![Upload Content Form](image-2.png)
+
+
+![Track Of All Logs](image-3.png)
+
+
+![Dark Mode](image-4.png)
+
+
+
+
+
+
+
 # 📁 Project Structure
 
 ```txt
@@ -76,3 +117,4 @@ cb/
 │
 ├── vercel.json
 ├── package.json
+
