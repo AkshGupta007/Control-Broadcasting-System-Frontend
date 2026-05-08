@@ -1,0 +1,119 @@
+FRONTEND NOTES - CONTROL BROADCASTING SYSTEM
+====================================================
+
+1. PROJECT STRUCTURE
+----------------------------------------------------
+The project is built using React (Vite) and follows a modular structure.
+
+src/
+│
+├── Components/        → Reusable UI components
+│   ├── Common/        → Sidebar, ProtectedRoutes, UI helpers
+│   ├── Teacher/       → Teacher-specific pages/components
+│   ├── Principal/     → Principal-specific pages/components
+│
+├── Pages/             → Route-level pages (Login, LivePage, etc.)
+│
+├── Services/          → API layer (Axios connector + API calls)
+│
+├── Slices/            → Redux slices (auth, content, dashboard, etc.)
+│
+├── Store/             → Redux store configuration
+│
+├── assets/            → Images and static files
+
+====================================================
+
+2. AUTHENTICATION FLOW
+----------------------------------------------------
+- User logs in using email & password
+- API call validates user from backend (/users endpoint)
+- On success:
+    → Token or user data stored in localStorage
+    → Redux auth state updated
+
+Flow:
+Login Page → API Call → Validate User → Store User → Redirect Dashboard
+
+- On refresh:
+    → Auth state restored from localStorage
+
+====================================================
+
+3. ROLE-BASED ROUTING
+----------------------------------------------------
+Two roles exist:
+
+1. Teacher
+   - Can upload content
+   - Can view own content dashboard
+   - Cannot access principal routes
+
+2. Principal
+   - Can view all content
+   - Can approve/reject content
+   - Can access approval dashboard
+
+Implementation:
+- ProtectedRoutes component checks:
+    → user role
+    → authentication status
+
+Route Protection Logic:
+- If not logged in → redirect to /login
+- If role mismatch → redirect /unauthorized
+
+====================================================
+
+4. API INTEGRATION APPROACH
+----------------------------------------------------
+- Axios instance created in Services/Apiconnector.js
+- Base URL configured using environment variable:
+
+   BaseURL="https://control-broadcasting-system-frontend-1.onrender.com"
+   
+API structure:
+- GET /users → login validation
+- GET /content → fetch content
+- POST /content → upload content
+- PATCH/DELETE → update content status
+
+Query-based filtering used:
+- /content?teacherId=1
+- /content?status=pending
+
+====================================================
+
+5. STATE MANAGEMENT APPROACH
+----------------------------------------------------
+Redux Toolkit is used for global state management.
+
+Slices used:
+- authSlice       → user login/logout
+- contentSlice    → teacher content management
+- dashboardSlice  → stats for teacher/principal
+- liveContentSlice→ approved content for live page
+- uiSlice         → UI states (modals, loading, etc.)
+
+Flow:
+API Call → Thunk (createAsyncThunk) → Redux Store → UI update
+
+Selectors used to access state in components.
+
+====================================================
+
+6. ASSUMPTIONS
+----------------------------------------------------
+- Backend is mocked using json-server (db.json)
+- No real authentication system (JWT not implemented)
+- Role is determined from user object in db.json
+- Content status lifecycle:
+    pending → approved/rejected
+- Data persistence depends on json-server (not production DB)
+- Deployment uses:
+    Frontend → Vercel
+    Backend → Render
+
+====================================================
+
+END OF NOTES
